@@ -1,0 +1,10 @@
+{
+  "name": "team4",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "scripts": {
+    "deploy": "echo 'Добавьте сюда скрипты сборки'",
+    "start": "node index.js"
+  }
+}

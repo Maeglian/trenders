@@ -1,0 +1,41 @@
+{
+  "qloud": {
+    "host": "platform.yandex-team.ru",
+    "id": "ui-development-school.projects.{{CUSTOM.DOCKER.project}}.{{CUSTOM.DOCKER.tag}}.app",
+    "routes": [
+      {
+        "location": "/",
+        "proxyReadTimeout": "6000ms",
+        "proxyWriteTimeout": "6000ms"
+      }
+    ],
+    "domains": [
+      {
+        "type": "common",
+        "domainName": "shri-{{CUSTOM.DOCKER.project}}-{{CUSTOM.DOCKER.tag}}.common-ext.yandex-team.ru"
+      }
+    ],
+    "component": {
+      "name": "app",
+      "image": {
+        "repo": "{{CUSTOM.DOCKER.registry_path}}",
+        "tag": "{{CUSTOM.DOCKER.tag}}"
+      },
+      "type": "docker-image",
+      "instanceGroups": [{
+        "location": "ALL",
+        "units": 1,
+        "backup": false
+      }],
+      "deployType": "outsource",
+      "stdout": "line",
+      "stderr": "line",
+      "size": "t1_micro",
+      "network": "SHRI_NETS",
+      "diskSize": 1,
+      "routes": ["/"],
+      "secrets": []
+    },
+    "strategy": "override"
+  }
+}
