@@ -14,4 +14,4 @@
 
 ***Например:***
 
-https://shri-tenders-master.common-ext.yandex-team.ru
+https://shri-trenders-master.common-ext.yandex-team.ru

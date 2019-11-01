@@ -1,5 +1,5 @@
 {
-  "name": "tenders",
+  "name": "trenders",
   "dependencies": {
     "express": "^4.16.4"
   },
