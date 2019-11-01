@@ -11,7 +11,7 @@ env:
     SANDBOX_PRIVILEGED_CONTAINER=1
     IS_DEPLOY=1
     IS_BUILD=1
-    PROJECT=team4
+    PROJECT=tenders
 
 install:
   - echo "empty"
