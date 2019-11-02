@@ -1,0 +1,24 @@
+.Carousel {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.Carousel-HeaderTitle {
+    margin: 8px 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.Carousel-List {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll;
+}
+
+.Carousel-List::-webkit-scrollbar {
+    display: none;
+}

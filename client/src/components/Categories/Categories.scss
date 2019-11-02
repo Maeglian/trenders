@@ -1,4 +1,6 @@
 .Categories {
+    padding-left: 16px;
+    padding-right: 4px;
     padding-top: 2px;
 
     &-Item {
@@ -6,14 +8,12 @@
         color: var(--text-secondary);
         font-size: 15px;
         line-height: 16px;
+        white-space: nowrap;
         margin-right: 12px;
         padding: 5px 6px;
         // пока не прикрутили react-router
         cursor: pointer;
 
-        &:last-child {
-            margin-right: 0;
-        }
 
         &_state_active {
             background-color: var(--color-accent);
