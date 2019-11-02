@@ -1,14 +1,119 @@
-a {
-    text-decoration: none;
-    color: inherit;
+.Card { 
+    border-radius: 6px;
+    
+    &-Link {
+        text-align: left;
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;    
+    }
+     
+    &-Thumb {
+        position: relative;
+        height: 104px;
+        background-size: cover;
+        border-radius: 6px 6px 0 0;
+    }    
+
+    &-Details {
+        position: absolute;
+        left: 8px;
+        bottom: 8px;
+        display: flex;
+    }
+
+    &-Duration {
+        padding: 2px 4px;
+        font-size: 12px;
+        line-height: 16px;
+        background-color: var(--color-layout-dark);
+        border-radius: 4px;
+    }
+
+    &-Rating{
+        margin-right: 5px;
+        padding: 2px 6px;
+        font-size: 11px;
+        font-weight: 700;
+        background-color: var(--color-layout-rate);
+        border-radius: 4px;
+    }
+
+    &-Score {
+        padding: 2px 6px;
+        font-size: 11px;
+        background-color: var(--color-layout-medium);
+        border-radius: 4px;
+
+        &:before {
+            content: '';
+            display: inline-block;
+            position: relative;
+            top: 1px;
+            width: 11px;
+            height: 11px;
+            margin-right: 3px;
+            background: (url(//yastatic.net/s3/home-static/_/s/E/sMYY2M7l7Ha7UNPZlT11a3Fy0.svg) no-repeat 50% 50%);
+            background-position: 0 0;
+        }
+    }
+
+    &-Content {
+        padding: 7px 12px;
+        text-align: left;
+    }
+
+    &-Title {
+        max-height: 32px;
+        margin-bottom: 3px;
+        font-size: 13px;
+        color: var(--text-primary);
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &-Subtitle {
+        font-size: 12px;
+        color: var(--text-subtitle);
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &_width_small {
+        width: 100px;
+    }
+
+    &_width_medium {
+        width: 184px;
+    }
+
+    &_width_full {
+        width: 100%;
+        height: 281px;
+
+        &-Thumb {
+            height: 184px;
+        }
+    }    
 }
 
-.Card {
-    min-width: 117px;
-    max-width: 162px;
-  
-    &-Thumb {
+.Card_width_medium {
+    height: 172px;
+    background-color: var(--color-layout);
+
+    .Card-Thumb {
+        height: 104px;
+    }
+}
+
+.Card_width_small {
+
+    .Card-Thumb {
         height: 175px;
-        background-size: cover;
+        border-radius: 4px;
+    }
+
+    .Card-Thumb:hover {
+        transform: translateY(-6px);
     }
 }
