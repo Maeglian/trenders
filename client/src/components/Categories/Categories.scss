@@ -1,12 +1,30 @@
 .Categories {
+    padding-top: 2px;
+
     &-Item {
         display: inline-block;
         color: var(--text-secondary);
-        font-size: 16px;
+        font-size: 15px;
+        line-height: 16px;
         margin-right: 12px;
+        padding: 5px 6px;
+        // пока не прикрутили react-router
+        cursor: pointer;
 
         &:last-child {
             margin-right: 0;
+        }
+
+        &_state_active {
+            background-color: var(--color-accent);
+            color: var(--text-primary);
+            border-radius: 6px;
+        }
+
+        &:hover {
+            background-color: var(--color-gray-dark);
+            color: var(--text-primary);
+            border-radius: 6px;
         }
     }
 
