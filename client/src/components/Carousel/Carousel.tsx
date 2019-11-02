@@ -19,11 +19,10 @@ class Carousel extends React.Component<CarouselProps> {
                     <div className="Carousel-HeaderTitle">{this.props.title}</div>
                     <div className="Carousel-HeaderHide"></div>
                 </div>
-                <ul className="Carousel-List">
-                    {this.props.list.map((item, num) => {
-                        <li className="Carousel-ListItem" key={num}>{item}</li>;
-                    })}
-                </ul>
+                <div className="Carousel-List">
+                    {this.props.list.map((item, num) =>
+                        <div className="Carousel-ListItem" key={num}>{item}</div>)}
+                </div>
             </div>
         );
     }

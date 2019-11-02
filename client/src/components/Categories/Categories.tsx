@@ -1,21 +1,14 @@
 import React, { Component } from 'react';
+import Carousel from '../Carousel/Carousel';
 import './Categories.scss';
 
 
-const categories = ['Что посмотреть', 'Фильмы', 'Сериалы'];
+const categories = ['Что посмотреть', 'Фильмы', 'Сериалы', 'Мультфильмы', 'Блогеры', 'Спорт', 'Музыка', 'Игры'];
 
 class Categories extends Component {
     render() {
         return (
-            <div className="Categories">
-                {
-                    categories.map((item) => (
-                        <div className="Categories-Item">
-                            {item}
-                        </div>
-                    ))
-                }
-            </div>
+            <Carousel list={categories}/>
         );
     }
 }

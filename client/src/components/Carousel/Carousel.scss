@@ -17,6 +17,8 @@
 }
 
 .Carousel-List {
+    display: flex;
+    flex-direction: row;
     width: 100%;
     height: 100%;
     overflow-x: scroll;
@@ -24,6 +26,10 @@
     box-sizing: content-box;
     margin-left: 16px;
     margin-right: -16px;
+}
+
+.Carousel-List::-webkit-scrollbar {
+    display: none;
 }
 
 .Carousel-ListItem {
