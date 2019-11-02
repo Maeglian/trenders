@@ -1,0 +1,16 @@
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+
+    &-Logo {
+        font-size: 28px;
+        line-height: 16px;
+        font-weight: 300;
+    }
+
+    .Ya-Logo {
+        font-weight: 500;
+    }
+}
