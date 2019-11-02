@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import './Header.scss';
 import Icon from '../Icon/Icon';
-import  { ReactComponent as Search }  from '../../images/svg/search.svg';
+import { ReactComponent as Search } from '../../images/svg/search.svg';
+import { ReactComponent as Logo } from '../../images/svg/logo.svg';
 
 class Header extends Component {
-    render() {
+    public render() {
         return (
             <div className="Header">
                 <div className="Header-Logo">
-                    <span className='Ya-Logo'>Яндекс</span> Эфир
+                    <Logo />
                 </div>
-                <Icon><Search /></Icon>
+                <Icon className="Header-Search"><Search /></Icon>
             </div>
         );
     }
