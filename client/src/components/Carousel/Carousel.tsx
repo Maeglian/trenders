@@ -8,6 +8,10 @@ interface CarouselProps {
 }
 
 class Carousel extends React.Component<CarouselProps> {
+    public static defaultProps = {
+        title: '',
+        list: ['Что посмотреть', 'Фильмы', 'Сериалы', 'Мультфильмы', 'Блогеры', 'Спорт', 'Музыка', 'Игры'],
+    };
     public render() {
         return (
             <div className="Carousel">
