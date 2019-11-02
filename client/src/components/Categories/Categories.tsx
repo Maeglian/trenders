@@ -8,7 +8,18 @@ const categories = ['Что посмотреть', 'Фильмы', 'Сериал
 class Categories extends Component {
     render() {
         return (
-            <Carousel list={categories}/>
+            <div className="Categories">
+                <Carousel>
+                {
+                    categories.map((item) => (
+                        <div className="Categories-Item">
+                            {item}
+                        </div>
+                    ))
+                }
+                </Carousel>
+                
+            </div>
         );
     }
 }

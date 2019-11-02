@@ -4,15 +4,15 @@ import './Carousel.scss';
 
 interface CarouselProps {
     title: string;
-    list: string[];
+    children: unknown;
 }
 
 class Carousel extends React.Component<CarouselProps> {
     public static defaultProps = {
         title: '',
-        list: ['Что посмотреть', 'Фильмы', 'Сериалы', 'Мультфильмы', 'Блогеры', 'Спорт', 'Музыка', 'Игры'],
     };
     public render() {
+        const children = this.props.children;
         return (
             <div className="Carousel">
                 <div className="Carousel-Header">
@@ -20,8 +20,8 @@ class Carousel extends React.Component<CarouselProps> {
                     <div className="Carousel-HeaderHide"></div>
                 </div>
                 <div className="Carousel-List">
-                    {this.props.list.map((item, num) =>
-                        <div className="Carousel-ListItem" key={num}>{item}</div>)}
+                    {React.Children.map(children, (child, num) =>
+                        <div className="Carousel-ListItem" key={num}>{child}</div>)}
                 </div>
             </div>
         );
