@@ -6,13 +6,13 @@ import './Categories.scss';
 const categories = ['Что посмотреть', 'Фильмы', 'Сериалы', 'Мультфильмы', 'Блогеры', 'Спорт', 'Музыка', 'Игры'];
 
 class Categories extends Component {
-    render() {
+    public render() {
         return (
             <div className="Categories">
                 <Carousel>
                 {
-                    categories.map((item) => (
-                        <div className="Categories-Item">
+                    categories.map((item, index) => (
+                        <div className={`Categories-Item ${index === 0 && 'Categories-Item_state_active'}`}>
                             {item}
                         </div>
                     ))
