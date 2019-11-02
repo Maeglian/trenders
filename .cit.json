@@ -11,8 +11,8 @@
     ],
     "domains": [
       {
-        "type": "common",
-        "domainName": "shri-{{CUSTOM.DOCKER.project}}-{{CUSTOM.DOCKER.tag}}.common-ext.yandex-team.ru"
+        "type": "ui-development-school",
+        "domainName": "shri-{{CUSTOM.DOCKER.project}}-{{CUSTOM.DOCKER.tag}}.ui-development-school.yandex-team.ru"
       }
     ],
     "component": {
