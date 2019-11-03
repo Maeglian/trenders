@@ -1,24 +1,36 @@
 .Carousel {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
+    &-Title {
+        margin: 8px 0;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 32px;
+    }
 
-.Carousel-HeaderTitle {
-    margin: 8px 0;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 32px;
-}
+    &-List {
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+        margin-left: -16px;
+        margin-right: -16px;
 
-.Carousel-List {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    overflow-x: scroll;
-}
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
 
-.Carousel-List::-webkit-scrollbar {
-    display: none;
+    &-Item {
+        &_margin {
+            &_s {
+                margin-left: 8px;
+            }
+
+            &_m {
+                margin-left: 12px;
+            }
+        }
+
+        &:first-child {
+            margin-left: 16px;
+        }
+    }
 }

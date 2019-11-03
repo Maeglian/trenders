@@ -1,27 +1,28 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './Carousel.scss';
 
 interface CarouselProps {
-    title: string;
+    title?: string;
+    margin: string;
     children: unknown;
 }
 
 class Carousel extends React.Component<CarouselProps> {
     public static defaultProps = {
-        title: '',
+        margin: 'm',
     };
     public render() {
         const children = this.props.children;
+        const modName = 'Carousel-Item_margin_' + this.props.margin;
         return (
             <div className="Carousel">
                 <div className="Carousel-Header">
-                    <div className="Carousel-HeaderTitle">{this.props.title}</div>
-                    <div className="Carousel-HeaderHide"></div>
+                    {this.props.title && <div className="Carousel-Title">{this.props.title}</div>}
+                    <div className="Carousel-Hide"></div>
                 </div>
                 <div className="Carousel-List">
                     {React.Children.map(children, (child, num) =>
-                        <div className="Carousel-ListItem" key={num}>{child}</div>)}
+                        <div className={"Carousel-Item " + modName} key={num}>{child}</div>)}
                 </div>
             </div>
         );
