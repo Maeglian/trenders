@@ -12,7 +12,9 @@ const App: React.FC = () => {
       <div className="App">
         <Header />
         <Categories />
-        <Trends />
+        <div className="App-Content">
+          <Trends />
+        </div>
       </div>
     </Provider>
   );

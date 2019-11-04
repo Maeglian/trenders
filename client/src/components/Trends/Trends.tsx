@@ -1,4 +1,4 @@
-import React, { useState,  } from 'react';
+import React, { useState  } from 'react';
 import './style.scss';
 import SmallCard, { SmallCardProps } from '../SmallCard/SmallCard';
 import TrendCard from '../TrendCard/TrendCard';
@@ -10,13 +10,13 @@ interface TrendsProps {
 }
 
 const mapStateToProps = (state: State) => ({
-    trends: state.trends
+    trends: state.trends,
 });
 
 const renderItems = (trends: SmallCardProps[], horizontal: boolean) => {
     if (horizontal) {
         return (
-            <Carousel>
+            <Carousel margin="l">
                 {trends.map((props) => <SmallCard {...props}/>)}
             </Carousel>
         );
@@ -29,7 +29,7 @@ const Trends = ({ trends }: TrendsProps) => {
     const [horizontal, setHorizontal] = useState(true);
 
     const openTrends = () => {
-        setHorizontal(false)
+        setHorizontal(false);
     };
 
     return (
