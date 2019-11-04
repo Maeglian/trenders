@@ -4,7 +4,7 @@
 
   &-Content {
     background-color: var(--color-background-content); 
-    padding: 16px;
-    height: 100vh;
+    padding: 0 16px;
+    min-height: 100vh;
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import Title from '../Title/Title';
 import './Carousel.scss';
 
 
@@ -23,7 +24,7 @@ class Carousel extends React.Component<CarouselProps> {
         return (
             <div className="Carousel">
                 <div className="Carousel-Header">
-                    {title && <div className="Carousel-Title">{title}</div>}
+                    {title && <Title>{title}</Title>}
                     <div className="Carousel-Hide"></div>
                 </div>
                 <div className="Carousel-List">
