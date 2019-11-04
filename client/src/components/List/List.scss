@@ -1,0 +1,8 @@
+.List {
+  &-Item {
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
