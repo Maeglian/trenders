@@ -1,3 +1,10 @@
 .App {
+  overflow-x: hidden;
   text-align: center;
+
+  &-Content {
+    background-color: var(--color-background-content); 
+    padding: 16px;
+    height: 100vh;
+  }
 }

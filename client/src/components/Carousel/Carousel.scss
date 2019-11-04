@@ -10,8 +10,14 @@
         display: flex;
         flex-direction: row;
         overflow-x: scroll;
+        padding-left: 16px;
         margin-left: -16px;
         margin-right: -16px;
+
+        &:after {
+            content: '';
+            flex: 0 0 16px;
+        }
 
         &::-webkit-scrollbar {
             display: none;
@@ -27,10 +33,14 @@
             &_m {
                 margin-left: 12px;
             }
+
+            &_l {
+                margin-left: 16px;
+            }
         }
 
         &:first-child {
-            margin-left: 16px;
+            margin-left: 0;
         }
     }
 }

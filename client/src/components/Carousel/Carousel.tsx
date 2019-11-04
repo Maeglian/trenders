@@ -1,5 +1,7 @@
 import React from 'react';
+import classnames from 'classnames';
 import './Carousel.scss';
+
 
 interface CarouselProps {
     title?: string;
@@ -12,17 +14,21 @@ class Carousel extends React.Component<CarouselProps> {
         margin: 'm',
     };
     public render() {
-        const children = this.props.children;
-        const modName = 'Carousel-Item_margin_' + this.props.margin;
+        const { children, margin, title } = this.props;
+        const itemCn = classnames(
+            'Carousel-Item',
+            margin && `Carousel-Item_margin_${margin}`,
+        );
+
         return (
             <div className="Carousel">
                 <div className="Carousel-Header">
-                    {this.props.title && <div className="Carousel-Title">{this.props.title}</div>}
+                    {title && <div className="Carousel-Title">{title}</div>}
                     <div className="Carousel-Hide"></div>
                 </div>
                 <div className="Carousel-List">
                     {React.Children.map(children, (child, num) =>
-                        <div className={"Carousel-Item " + modName} key={num}>{child}</div>)}
+                        <div className={itemCn} key={num}>{child}</div>)}
                 </div>
             </div>
         );
