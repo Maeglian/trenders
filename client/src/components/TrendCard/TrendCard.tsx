@@ -1,13 +1,8 @@
 import React from 'react';
+import Trend from '../../types/trend';
 import './style.scss';
 
-interface TrendCardProps {
-    img: string;
-    desc: string;
-    icon?: string;
-}
-
-const TrendCard = ({ img, desc }: TrendCardProps) => {
+const TrendCard = ({ img, desc }: Trend) => {
    return (
         <div className="TrendCard" style={{ backgroundImage: `url(${img})` }}>
             <p>{desc}</p>

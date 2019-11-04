@@ -5,10 +5,9 @@ import './style.scss';
 export interface SmallCardProps {
     img: string;
     desc: string;
-    icon?: string;
 }
 
-const SmallCard = ({img, desc, icon}: SmallCardProps) => {
+const SmallCard = ({img, desc}: SmallCardProps) => {
     return (
         <div className="SmallCard" style={ {backgroundImage: `url(${img})`} }>
             <Grow className="SmallCard-Icon"/>
