@@ -3,9 +3,15 @@ import './style.scss';
 import SmallCard, { SmallCardProps } from '../SmallCard/SmallCard';
 import TrendCard from '../TrendCard/TrendCard';
 import Carousel from '../Carousel/Carousel';
+import {State} from '../../store/createStore';
+import {connect} from 'react-redux';
 interface TrendsProps {
     trends: SmallCardProps[];
 }
+
+const mapStateToProps = (state: State) => ({
+    trends: state.trends
+});
 
 const renderItems = (trends: SmallCardProps[], horizontal: boolean) => {
     if (horizontal) {
@@ -34,4 +40,4 @@ const Trends = ({ trends }: TrendsProps) => {
     );
 };
 
-export default Trends;
+export default connect(mapStateToProps)(Trends);
