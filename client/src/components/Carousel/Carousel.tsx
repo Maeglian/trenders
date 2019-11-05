@@ -54,8 +54,11 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
                             <div className="Carousel-HideInfo">Вы скрыли подборку видео из ленты</div>}
                     </div>
                     <Icon className="Carousel-Hide">
-                        {!isHidden && <Close width="13" height="13" viewBox="0 0 16 16" onClick={this.handleHide}/>}
-                        {isHidden && <Undo width="17" height="17" viewBox="2 0 18 17" onClick={this.handleHide}/>}
+                        {
+                            isHidden 
+                                ? <Undo width="17" height="17" viewBox="2 0 18 17" onClick={this.handleHide}/>
+                                : <Close width="13" height="13" viewBox="0 0 16 16" onClick={this.handleHide}/>
+                        }
                     </Icon>
                 </div>}
                 {!isHidden && <div className="Carousel-List">
