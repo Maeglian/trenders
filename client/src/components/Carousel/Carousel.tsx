@@ -7,6 +7,7 @@ import './Carousel.scss';
 interface CarouselProps {
     title?: string;
     margin: string;
+    carouselId?: string;
     children: unknown;
 }
 
@@ -15,16 +16,17 @@ class Carousel extends React.Component<CarouselProps> {
         margin: 'm',
     };
     public render() {
-        const { children, margin, title } = this.props;
+        const { children, margin, title, carouselId } = this.props;
         const itemCn = classnames(
             'Carousel-Item',
             margin && `Carousel-Item_margin_${margin}`,
         );
+        const url = carouselId ? `https://yandex.ru/efir?from=efir_touch&stream_active=theme&stream_publisher=${carouselId}` : undefined;
 
         return (
             <div className="Carousel">
                 <div className="Carousel-Header">
-                    {title && <Title>{title}</Title>}
+                    {title && <Title url={url}>{title}</Title>}
                     <div className="Carousel-Hide"></div>
                 </div>
                 <div className="Carousel-List">

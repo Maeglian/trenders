@@ -4,4 +4,9 @@
     font-size: 18px;
     text-align: left;
     line-height: 32px;
+
+    &-Link {
+        color: inherit;
+        text-decoration: none;
+    }
 }
