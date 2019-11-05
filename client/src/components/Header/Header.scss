@@ -2,11 +2,13 @@
     position: relative;
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 46px;
+    align-items: center;
+    height: 48px;
+    padding: 0 16px;
+    box-sizing: border-box;
 
-    &-Logo {
+    &-Logo {        
         font-size: 28px;
         line-height: 16px;
         font-weight: 300;
@@ -18,10 +20,28 @@
 
     &-Search {
         position: absolute;
-        right: 14px;
+        margin-right: 16px;
+        right: 0;
         width: auto;
         height: 100%;
         display: flex;
         align-items: center;
+    }
+}
+
+@media(min-width: 440px) {
+    .Header {
+        justify-content: flex-start;
+        height: 66px;
+        padding: 14px 16px;
+
+        &-Logo {
+            margin-right: 16px;
+        }
+
+        &-Search {
+            position: relative;
+            right: initial;
+        }
     }
 }
