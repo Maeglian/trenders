@@ -1,6 +1,9 @@
 import os
 
 from trends.app import create_app
+from flask_caching import Cache
+
+from trends.clients.google import start_get_trends
 
 if __name__ == '__main__':
     # export DATABASE_URL=postgresql://me:hackme@0.0.0.0/trends
@@ -10,3 +13,4 @@ if __name__ == '__main__':
 
     app = create_app(os.environ['DATABASE_URL'])
     app.run(host='0.0.0.0', port=8080)
+

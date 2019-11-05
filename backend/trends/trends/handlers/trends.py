@@ -1,4 +1,5 @@
 from flask import Blueprint, Response
+from trends.clients.google import get_trends_cached
 
 trends = Blueprint('trends', __name__)
 
@@ -14,7 +15,8 @@ mock_json = '''
     {"title": "Спартак Арсенал смотреть онлайн", "avatar": "https://t1.gstatic.com/images?q=tbn:ANd9GcS9OyDUdTRfx75g5MoLoVArVZFUN9P595NT3Nhp1Mmh8vIe_mjU7bSnImovToicf0d4beeNKQ5P", "description": "АРЕНА LIVE! «Спартак» — «Арсенал»"}]}
 '''
 
+
 @trends.route('/fetch', methods=['GET'])
 def import_trends():
-        
-    return Response(mock_json, status=200)
+    json = get_trends_cached()
+    return Response(json, status=200)

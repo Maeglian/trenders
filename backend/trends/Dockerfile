@@ -16,7 +16,7 @@ ADD requirements.txt /opt/app/
 # SHELL ["/bin/bash", "-c"]
 WORKDIR /opt/app/
 
-RUN pip install -v trends-service*
+RUN pip install -v external_trends-service*
 
 EXPOSE 8080
 CMD ["python3", "app.py"]
