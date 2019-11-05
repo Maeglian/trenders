@@ -14,7 +14,7 @@ class Categories extends Component {
     public render() {
         return (
             <div className="Categories">
-                <Carousel ableToBeHidden={false}>
+                <Carousel canBeHidden={false}>
                 {
                     categories.map((item, index) => {
                         const itemCn = classnames(

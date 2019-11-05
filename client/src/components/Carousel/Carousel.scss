@@ -58,15 +58,9 @@
     }
 
     &-Hide {
-        padding: 14px 0;
+        padding: 10px 0;
         width: 13px;
         height: 13px;
-        background: url('../../images/svg/close.svg') 50% 50% no-repeat;
-        background-size: 13px;
-
-        &_hidden {
-            background: url('../../images/svg/undo.svg') 50% 50% no-repeat;
-        }
     }
 
     &-HideInfo {
