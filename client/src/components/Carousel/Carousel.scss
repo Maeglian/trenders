@@ -41,4 +41,29 @@
             margin-left: 0;
         }
     }
+
+    &-Header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-TitleWrapper {
+        min-height: 50px;
+        box-sizing: border-box;
+        padding: 8px 0 14px;
+
+        &_hidden {
+            opacity: .4;
+        }
+    }
+
+    &-Hide {
+        padding: 10px 0;
+        width: 13px;
+        height: 13px;
+    }
+
+    &-HideInfo {
+        font-size: 14px;
+    }
 }

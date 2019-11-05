@@ -7,11 +7,12 @@ export interface ListProps {
     cards: CardProps[];
     content: string;
     title: string;
+    carouselId: string;
 }
 
-const List = ({cards, content, title}: ListProps) => {
+const List = ({cards, content, title, carouselId}: ListProps) => {
   return (
-    <Carousel title={title} margin="s">
+    <Carousel title={title} margin="s" carouselId={carouselId} >
       {cards.map((card) => <Card card={card} content={content}/>)}
     </Carousel>
   );

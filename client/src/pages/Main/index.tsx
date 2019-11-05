@@ -18,8 +18,8 @@ class Main extends Component<RouteComponentProps<TParam>> {
         return (
             <>
                 <Trends category={category} />
-                <List cards={blogers} title={blogersItems[0].title} content="blogers"/>
-                <List cards={dramas} title={items[3].title} content="series"/>
+                <List cards={blogers} title={blogersItems[0].title} carouselId={blogersItems[0].carousel_id} content="blogers"/>
+                <List cards={dramas} title={items[3].title} carouselId={items[3].carousel_id} content="series"/>
             </>
         );
     }
