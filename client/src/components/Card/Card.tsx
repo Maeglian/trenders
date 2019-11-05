@@ -34,6 +34,6 @@ export default class Card extends Component<CardProps> {
                     </div>
                 </div>
             </a>
-        )
+        );
     }
 }
