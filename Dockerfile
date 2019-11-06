@@ -1,9 +1,9 @@
-FROM node:8
+FROM node:12
 
-ENV appdir /app
+ENV appdir /client
 COPY / $appdir
 WORKDIR $appdir
-RUN npm ci
+RUN npm ci --only=production
 RUN npm run deploy
 
 ARG NODE_ENV
