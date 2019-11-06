@@ -2,11 +2,10 @@ from flask_caching import Cache
 from pytrends.request import TrendReq
 
 
-
 class RealTrendReq(TrendReq):
     def today_searches_fine(self, pn='RU'):
         """Requests data from Google Daily Trends section for daily trends
-        Returns (date, trend) pairs only for current date"""
+        Returns list of dicts of trends for current date"""
         trends_list = list()
         keys = ('title', 'avatar', 'description')
         forms = {'ns': 15, 'geo': pn, 'tz': '-180', 'hl': 'en-US'}
@@ -20,8 +19,14 @@ class RealTrendReq(TrendReq):
         trends = req_json['trendingSearches']
         for trend in trends:
             title = (trend['title']['query']).replace(u'\xa0', u' ')
-            avatar = trend['image']['imageUrl']
-            description = (trend['articles'][0]['title']).replace(u'&quot;', u' ')
+            try:
+                avatar = trend['image']['imageUrl']
+            except KeyError:
+                avatar = ""
+            try:
+                description = (trend['articles'][0]['title']).replace(u'&quot;', u' ')
+            except KeyError:
+                description = ""
             record = (title, avatar, description)
             trends_list.append(dict(zip(keys, record)))
         return trends_list
