@@ -45,6 +45,7 @@
   "devDependencies": {
     "@types/classnames": "^2.2.9",
     "@types/react-router-dom": "^5.1.2",
-    "tslint": "^5.20.0"
+    "tslint": "^5.20.0",
+    "tslint-eslint-rules": "^5.4.0"
   }
 }

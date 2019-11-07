@@ -1,8 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
 import Title from '../Title/Title';
-import {ReactComponent as Close} from '../../images/svg/close.svg';
-import {ReactComponent as Undo} from '../../images/svg/undo.svg';
+import { ReactComponent as Close } from '../../images/svg/close.svg';
+import { ReactComponent as Undo } from '../../images/svg/undo.svg';
 import Icon from '../Icon/Icon';
 import './Carousel.scss';
 
@@ -55,7 +55,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
                     </div>
                     <Icon className="Carousel-Hide">
                         {
-                            isHidden 
+                            isHidden
                                 ? <Undo width="17" height="17" viewBox="2 0 18 17" onClick={this.handleHide}/>
                                 : <Close width="13" height="13" viewBox="0 0 16 16" onClick={this.handleHide}/>
                         }

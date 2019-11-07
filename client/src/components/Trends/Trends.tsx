@@ -14,8 +14,8 @@ const mapStateToProps = (state: State) => ({
     trends: state.trends,
 });
 
-const Trends = ({ trends, category }: TrendsProps) => {
-    return (
+const Trends = ({ trends, category }: TrendsProps) =>
+    (
         <div className="Trends">
             <Carousel title="Сейчас популярно" margin="s">
                 {trends.map((props) => <SmallCard {...props}/>)}
@@ -23,6 +23,5 @@ const Trends = ({ trends, category }: TrendsProps) => {
             <Link to={`/${category}/trends`} className="Trends-More">Показать все популярные темы</Link>
         </div>
     );
-};
 
 export default connect(mapStateToProps)(Trends);

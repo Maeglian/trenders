@@ -1,8 +1,8 @@
 import React from 'react';
-import {convertTime} from './../../utils';
+import { convertTime } from './../../utils';
 import { CardProps } from '../Card/Card';
 
-const CardDetails = ({card, content}: CardProps) => {
+const CardDetails = ({ card, content }: CardProps) => {
   const blogersDetails = (
     <div className="Card-Duration">
         {convertTime(card.duration)}

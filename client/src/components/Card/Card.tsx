@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import classnames from 'classnames';
 import './Card.scss';
 import CardDetails from '../CardDetails/CardDetails';
-import {dateUtils} from './../../utils';
+import { dateUtils } from './../../utils';
 
 export interface CardProps {
     card: any;
@@ -18,10 +18,11 @@ export default class Card extends Component<CardProps> {
             content === 'series' && 'Card_width_small',
         );
         const img = card.onto_poster || card.thumbnail;
+
         return (
             <a className="Card-Link" href={`https://yandex.ru/efir?from=efir&stream_id=${card.content_id}`} target="_blank">
                 <div className={cardCn}>
-                    <div className="Card-Thumb" style={{backgroundImage: `url(${img})`}}>
+                    <div className="Card-Thumb" style={{ backgroundImage: `url(${img})` }}>
                         <CardDetails card={card} content={content}/>
                     </div>
                     <div className="Card-Content">

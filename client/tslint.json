@@ -1,13 +1,29 @@
 {
-    "extends": "tslint:recommended",
+    "extends": [
+        "tslint:recommended",
+        "tslint-eslint-rules"
+    ],
     "rules": {
+        "await-promise": true,
+        "arrow-return-shorthand": [true, "multiline"],
+        "binary-expression-operand-order": true,
+        "cyclomatic-complexity": true,
         "interface-name": [true, "never-prefix"],
+        "linebreak-style": [true, "CRLF"],
         "quotemark": [
             true, "single", "jsx-double", "avoid-template", "avoid-escape"
         ],
+        "newline-before-return": true,
+        "no-consecutive-blank-lines": [true, 2],
+        "no-console": {
+            "severity": "warning",
+            "options": ["log"]
+        },
+        "no-inferrable-types": true,
+        "object-curly-spacing": true,
         "object-literal-sort-keys": false,
         "ordered-imports": false,
         "prefer-const": true,
-        "no-consecutive-blank-lines": [true, 2]
+        "unnecessary-else": [true, { "allow-else-if": true }]
     }
 }
