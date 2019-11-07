@@ -17,7 +17,7 @@ def get_alembic_config(db_url: str) -> Config:
     config = Config(file_=cmd_options.config, cmd_opts=cmd_options)
     config.set_main_option('sqlalchemy.url', db_url)
     config.set_main_option('script_location', os.path.join(
-        MODULE_PATH, 'content', 'alembic'
+        MODULE_PATH, 'trends', 'alembic'
     ))
 
     return config
