@@ -1,5 +1,5 @@
 import React from 'react';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import './App.scss';
 import {
     BrowserRouter as Router,
@@ -12,8 +12,8 @@ import Main from './pages/Main';
 import TrendsPage from './pages/TrendsPage';
 import store from './store/createStore';
 
-const App: React.FC = () => {
-    return (
+const App: React.FC = () =>
+    (
         <Provider store={store}>
             <Router>
                 <div className="App">
@@ -29,6 +29,5 @@ const App: React.FC = () => {
             </Router>
         </Provider>
     );
-};
 
 export default App;
