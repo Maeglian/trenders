@@ -8,12 +8,13 @@ from trends.handlers.trends import trends
 
 
 
-def create_app(db_url):
+def create_app(db_url, is_start_get_trends = True):
     app = Flask(__name__)
     # app.db = create_engine(db_url) #do we need db at all here?
     app.register_blueprint(trends, url_prefix='/')
     cache.init_app(app)
-    start_get_trends()
+    if is_start_get_trends:
+        start_get_trends()
     return app
 
 
@@ -23,5 +24,5 @@ if __name__ == '__main__':
     # docker run  --rm -e POSTGRES_DB=trends -e POSTGRES_USER=me -e POSTGRES_PASSWORD=hackme -p 5432:5432 postgres:10.7
     # print('DATABASE_URL', os.environ['DATABASE_URL'])
 
-    app = create_app(None) # os.environ['DATABASE_URL'])
+    app = create_app(None)  # os.environ['DATABASE_URL'])
     app.run(host='0.0.0.0', port=8080)

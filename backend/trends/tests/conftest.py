@@ -1,4 +1,3 @@
-import json
 import os
 import uuid
 
@@ -22,3 +21,13 @@ def temp_db() -> str:
         yield tmp_db_url
     finally:
         drop_database(tmp_db_url)
+
+@pytest.fixture
+def trends_json():
+    """
+    Get dummy data from json
+    :return: currency structure as string
+    """
+    path = os.path.join(TESTS_DIR, 'data/response.json')
+    with open(path) as f:
+        return f.read()

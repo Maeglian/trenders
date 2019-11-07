@@ -7,6 +7,7 @@ ENV PATH="/app/bin:${PATH}"
 WORKDIR /tmp
 # Install requirements on separate step for better cache
 COPY requirements.txt /tmp
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # Install app as python module
