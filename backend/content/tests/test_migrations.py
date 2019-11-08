@@ -5,7 +5,7 @@ from alembic.command import upgrade, downgrade
 from sqlalchemy.engine import Engine, create_engine
 
 from tests.conftest import DATABASE_URL
-from content.utils.testing import get_revisions, get_alembic_config
+from trends.utils.testing import get_revisions, get_alembic_config
 
 
 REVISIONS = list(get_revisions(DATABASE_URL))
