@@ -1,27 +1,9 @@
 .Carousel {
     &-List {
-        display: flex;
-        flex-direction: row;
-        overflow-x: scroll;
-        padding-left: 16px;
-        margin-left: -16px;
-        margin-right: -16px;
-
-        &:after {
-            content: '';
-            flex: 0 0 16px;
-        }
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
-
-        &::after {
-            content: '';
-            flex: 0 0 16px;
-        }
+        position: relative;
+        z-index: 0;
     }
-
+    
     &-Item {
         &_margin {
             &_s {
@@ -65,5 +47,36 @@
 
     &-HideInfo {
         font-size: 14px;
+    }
+
+    &-Arrow {
+        display: none;
+    }
+
+    @media(min-width: 440px) {
+        .Carousel {
+            &-Arrow {
+                display: block;
+                position: absolute;
+                z-index: 1;
+                top: calc(50% - 22px);
+                width: 44px;
+                height: 44px;
+                box-sizing: border-box;
+                padding: 10px;
+                background: var(--color-background-button);
+                border-radius: 50%;
+                cursor: pointer;
+
+                &_left {
+                    transform: rotate(180deg);
+                    left: -16px;
+                }
+
+                &_right {
+                    right: -16px;
+                }
+            }
+        }
     }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import Carousel from '../Carousel/Carousel';
+import Scroller from '../Scroller/Scroller';
 import './Categories.scss';
 
 
@@ -14,7 +14,7 @@ class Categories extends Component {
     public render() {
         return (
             <div className="Categories">
-                <Carousel canBeHidden={false}>
+                <Scroller>
                 {
                     categories.map((item, index) => {
                         const itemCn = classnames(
@@ -29,8 +29,7 @@ class Categories extends Component {
                         );
                     })
                 }
-                </Carousel>
-
+                </Scroller>
             </div>
         );
     }

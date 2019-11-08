@@ -1,0 +1,20 @@
+.Scroller {
+	display: flex;
+	flex-direction: row;
+	overflow-x: scroll;
+	padding-left: 16px;
+	margin-left: -16px;
+	margin-right: -16px;
+	transition: margin-left 0.25s linear;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	@media(max-width: 440px) {
+		&:after {
+			content: '';
+			flex: 0 0 16px;
+		}
+	}
+}
