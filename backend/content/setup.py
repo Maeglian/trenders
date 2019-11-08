@@ -1,16 +1,21 @@
 import setuptools
 
-setuptools.setup(name='trends-service',
+setuptools.setup(name='content',
                  version='1.0',
-                 description='Provides actual trends',
+                 description='',
                  url='http://github.com/oleg.fry/project-dummy',
-                 author='Anonymous',
-                 author_email='oleg.fry@gmail.com',
+                 author='Maria Ibragimova',
+                 author_email="antonina.gerasiova@yandex.ru",
                  license='MIT',
                  python_requires='>=3.7',
                  include_package_data=True,
                  zip_safe=False,
+                 packages=setuptools.find_packages(),
                  install_requires=[
-                     'flask',
+                     'Flask',
+                     'sqlalchemy',
+                     'psycopg2-binary',
+                     'alembic',
+                     'requests',
                  ],
                  )

@@ -1,0 +1,22 @@
+[loggers]
+keys=root
+
+[handlers]
+keys=fileHandler
+
+[formatters]
+keys=myFormatter
+
+[logger_root]
+level=DEBUG
+handlers=fileHandler
+
+[handler_fileHandler]
+level=DEBUG
+class=FileHandler
+formatter=myFormatter
+args=("content.log",)
+
+[formatter_myFormatter]
+format=%(asctime)s  %(levelname)s %(name)s %(message)s
+datefmt=%Y/%m/%d %I:%M:%S

@@ -17,10 +17,11 @@ depends_on = None
 
 
 def upgrade():
-    op.create_table('imports',
-    sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('created_at', sa.DateTime(timezone=True), server_default=sa.text('clock_timestamp()'), nullable=False),
-    sa.PrimaryKeyConstraint('id', name=op.f('pk__imports'))
+    op.create_table(
+        'imports',
+        sa.Column('id', sa.Integer(), nullable=False),
+        sa.Column('created_at', sa.DateTime(timezone=True), server_default=sa.text('clock_timestamp()'), nullable=False),
+        sa.PrimaryKeyConstraint('id', name=op.f('pk__imports'))
     )
 
 
