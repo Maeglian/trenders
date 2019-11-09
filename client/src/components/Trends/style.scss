@@ -1,6 +1,10 @@
 .Trends {
     margin-bottom: 20px;
 
+    @media(min-width: 440px) {
+        margin-top: 26px;
+    }
+
     &-More {
         padding: 10px 12px;
         display: block;
@@ -16,5 +20,10 @@
         &:hover {
             background: var(--color-background-button-hover);
         }
+
+        @media(min-width: 440px) {
+            display: none;
+        }
     }
+
 }

@@ -1,0 +1,90 @@
+.Player {
+	border-radius: 6px;
+
+	&-Container {
+		height: calc(100% - 60px);
+	}
+
+	&-Info {
+		display: flex;
+		justify-content: space-between;
+		padding: 12px;
+		text-align: left;
+		background: var(--color-background);
+	}
+
+	&-Text {
+		overflow: hidden;
+	}
+
+	&-Title {
+		overflow: hidden;
+		font-size: 15px;
+		font-weight: 500;
+		line-height: 1.3em;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	&-Channel {
+		font-size: 13px;
+		line-height: 1.2em;
+		color: var(--text-subtitle);
+	}
+
+	&-Avatar {
+		width: 32px;
+		height: 32px;
+		flex-basis: 32px;
+		border-radius: 50%;
+		margin-right: 10px;
+	}
+
+	&-Controls {
+		display: flex;
+	}
+
+	&-Icon {
+		display: inline-block;
+		width: 32px;
+		height: 32px;
+		box-sizing: border-box;
+		margin-left: 12px;
+		padding: 6px 8px 10px;
+		border-radius: 50%;
+
+		&_like {
+			margin-left: 6px;
+			background: var(--color-blue);
+		}
+
+		&_dislike {
+			background: var(--color-red);
+			transform: rotate(180deg);
+		}
+
+		&_next {
+			background: var(--color-background-button);
+			padding: 4px;
+		}
+	}
+
+	@media(max-width: 440px) {
+		display: none;
+	}
+
+	@media(min-width: 1441px) {
+		width: 586px;
+		height: 390px
+	}
+
+	@media(min-width: 1301px) and (max-width: 1440px) {
+		width: 498px;
+		height: 340px
+	}
+
+	@media(min-width: 851px) and (max-width: 1300px) {
+		width: 380px;
+		height: 274px;
+	}
+}
