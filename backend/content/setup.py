@@ -1,16 +1,20 @@
 import setuptools
 
-setuptools.setup(name='trends-service',
+setuptools.setup(name='comment_trends',
                  version='1.0',
-                 description='Provides actual trends',
+                 description='Provides trends by counting comments in efir documents',
                  url='http://github.com/oleg.fry/project-dummy',
-                 author='Anonymous',
-                 author_email='oleg.fry@gmail.com',
+                 author='Denis Antipov',
+                 author_email="antipov.dg@yandex.ru",
                  license='MIT',
-                 python_requires='>=3.7',
+                 python_requires='>=3.6',
                  include_package_data=True,
+                 packages=setuptools.find_packages(exclude='draft'),
                  zip_safe=False,
                  install_requires=[
-                     'flask',
+                     "requests",
+                     "flask",
+                     "Flask-Caching",
+                     "apscheduler",
                  ],
                  )
