@@ -47,7 +47,7 @@ lifecycle:
     echo "Installing dependencies..."
     npm ci
     echo "Building bundle..."
-    npm run build
+    npm run build || exit 1
     echo "Building docker image..."
     cd ../
     docker build --network=host -t "$DOCKER_REGISTRY_PATH/$PROJECT:$TAG" ./client
