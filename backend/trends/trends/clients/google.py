@@ -24,16 +24,19 @@ def get_trends(cache_=None):
     """
     Gets trends from google-trend, makes json, an put then to cache
     """
-    # TODO: resolve problems with logging from another thread
     logger = logging.getLogger(__name__)
-    logging.basicConfig()
-    logging.getLogger('apscheduler').setLevel(logging.DEBUG)
+
     try:
         response = make_json_response()
-        logger.debug("Got trends %s", response)
-        cache_.set('trends', response)
+        logger.debug("Got trends: %s", response)
     except Exception as e:
-        logging.error("Can't get trends from google due to %s", e)
+        logger.warning("Can't get trends from google due to %s", e)
+        raise
+    try:
+        cache_.set('trends', response)
+        logger.debug("Put trends to cache")
+    except Exception as e:
+        logger.warning("Can't put trends to cache due to %s", e)
         raise
 
 
@@ -41,15 +44,27 @@ def start_get_trends():
     """
     Start sending requests to google trends
     """
+    logger = logging.getLogger(__name__)
     scheduler = BackgroundScheduler()
-    job = scheduler.add_job(get_trends,
-                            trigger='interval',
-                            next_run_time=datetime.now(),
-                            minutes=GOOGLE_REQUEST_INTERVAL,
-                            jitter=GOOGLE_REQUEST_JITTER,
-                            kwargs={"cache_": cache}
-                            )
-    scheduler.start()
+    try:
+        job = scheduler.add_job(get_trends,
+                                trigger='interval',
+                                next_run_time=datetime.now(),
+                                minutes=GOOGLE_REQUEST_INTERVAL,
+                                jitter=GOOGLE_REQUEST_JITTER,
+                                kwargs={"cache_": cache}
+                                )
+        logger.info("Job %s was successfully added", job)
+    except Exception as e:
+        logger.error("Can't add job due to %s:", e)
+        raise
+
+    try:
+        scheduler.start()
+        logger.info("Scheduler %s was started", scheduler)
+    except Exception as e:
+        logger.error("Can't start scheduler %s due to %s:", scheduler, e)
+        raise
 
 
 def get_trends_cached(cache_):

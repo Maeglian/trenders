@@ -1,4 +1,6 @@
-from flask import Blueprint, Response
+import logging
+
+from flask import Blueprint, Response, request
 from trends.clients.google import get_trends_cached
 from trends.clients.prefs import cache
 
@@ -12,8 +14,12 @@ def import_trends():
     :return: flask. Response with google trends as json,
     if cache is empty returns 400 status
     """
+    logger = logging.getLogger(__name__)
+    logger.debug("Handler %s was triggered", request.path)
     json = get_trends_cached(cache)
     if json is not None:
-        return Response(response=json, status=200)
+        response = Response(response=json, status=200)
     else:
-        return Response(response="Cache is empty", status=400)
+        response = Response(response="Cache is empty", status=400)
+    logger.debug("Send to user %s", response)
+    return response

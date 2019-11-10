@@ -26,13 +26,26 @@ def setup_logging(path=os.path.join(OUTER_DIR, 'logging.yaml')):
 
 
 def create_app(db_url, is_start_get_trends=True):
-    app = Flask(__name__)
-    # app.db = create_engine(db_url) #do we need db at all here?
     setup_logging()
     logger = logging.getLogger("trends")
-    logger.debug("logger was set up")
+    logger.debug("About to create service trends")
+    try:
+        app = Flask(__name__)
+        logger.info("Service trends was successfully created")
+    except Exception as e:
+        logger.critical("Can't create service due to %s:", e)
+        raise
+
+    # app.db = create_engine(db_url) #do we need db at all here?
     app.register_blueprint(trends, url_prefix='/')
-    cache.init_app(app)
+
+    try:
+        cache.init_app(app)
+        logger.info("Cache was initialized")
+    except Exception as e:
+        logger.error("Can't initialise cache due to %s:", e)
+        raise
+
     if is_start_get_trends:
         start_get_trends()
     return app
