@@ -7,7 +7,6 @@ from sqlalchemy.engine import Engine, create_engine
 from tests.conftest import DATABASE_URL
 from trends.utils.testing import get_revisions, get_alembic_config
 
-
 REVISIONS = list(get_revisions(DATABASE_URL))
 MODULE_PATH = os.path.dirname(os.path.dirname(__file__))
 

@@ -3,6 +3,7 @@ import logging
 from datetime import datetime
 from apscheduler.schedulers.background import BackgroundScheduler
 from trends.clients.prefs import RealTrendReq, cache
+
 GOOGLE_REQUEST_INTERVAL = 15
 GOOGLE_REQUEST_JITTER = 120
 

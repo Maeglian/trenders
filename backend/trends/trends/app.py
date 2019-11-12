@@ -8,8 +8,7 @@ from trends.clients.google import start_get_trends
 from trends.clients.prefs import cache
 from trends.handlers.trends import trends
 
-
-OUTER_DIR = os.path.dirname(os.path.dirname(__file__))
+OUTER_DIR = os.path.dirname(__file__)
 
 
 def setup_logging(path=os.path.join(OUTER_DIR, 'logging.yaml')):

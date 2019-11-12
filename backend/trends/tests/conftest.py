@@ -10,7 +10,6 @@ DATABASE_URL = os.getenv('DATABASE_URL',
                          'postgresql://me:hackme@0.0.0.0/citizens')
 
 
-
 @pytest.fixture
 def temp_db() -> str:
     tmp_db_name = '.'.join([uuid.uuid4().hex, 'pytest'])
@@ -21,6 +20,7 @@ def temp_db() -> str:
         yield tmp_db_url
     finally:
         drop_database(tmp_db_url)
+
 
 @pytest.fixture
 def trends_json():
