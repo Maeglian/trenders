@@ -1,3 +1,7 @@
+import logging
+from logging.config import dictConfig
+import yaml
+
 from flask import Flask
 from trends.db import create_engine
 from trends.handlers.trends import trends
@@ -11,10 +15,27 @@ from trends.utils.get_db_environ import get_environ_or_default
 
 # my_ip = "84.201.160.40"
 my_ip = "127.0.0.1"
+CURRENT_DIR = os.path.dirname(__file__)
+
+
+def setup_logging(path=os.path.join(CURRENT_DIR, 'logging.yaml')):
+    try:
+        with open(path, 'rt') as f:
+            config = yaml.safe_load(f.read())
+            logging.config.dictConfig(config)
+
+    except FileNotFoundError as e:
+        logging.warning(e)
+        logging.warning('Error in logging configuration. Using default')
+        logging.basicConfig(level=logging.INFO)
 
 
 def create_app(db_url):
+    setup_logging()
+    logger = logging.getLogger("trends")
+    logger.debug("About to create service mixer")
     app = Flask(__name__)
+
     app.db = create_engine(db_url)
     app.register_blueprint(trends, url_prefix='/')
     return app

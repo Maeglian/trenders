@@ -6,4 +6,3 @@ apscheduler
 pytrends
 Flask-Caching
 PyYaml
-coloredlogs

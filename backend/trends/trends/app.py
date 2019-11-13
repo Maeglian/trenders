@@ -8,19 +8,18 @@ from trends.clients.google import start_get_trends
 from trends.clients.prefs import cache
 from trends.handlers.trends import trends
 
-OUTER_DIR = os.path.dirname(__file__)
+CURRENT_DIR = os.path.dirname(__file__)
 
 
-def setup_logging(path=os.path.join(OUTER_DIR, 'logging.yaml')):
-    print(OUTER_DIR)
+def setup_logging(path=os.path.join(CURRENT_DIR, 'logging.yaml')):
     try:
         with open(path, 'rt') as f:
             config = yaml.safe_load(f.read())
             logging.config.dictConfig(config)
 
     except FileNotFoundError as e:
-        print(e)
-        print('Error in logging configuration. Using default')
+        logging.warning(e)
+        logging.warning('Error in logging configuration. Using default')
         logging.basicConfig(level=logging.INFO)
 
 
