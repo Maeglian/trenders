@@ -1,90 +1,93 @@
+@import './../../variables';
+
 .Player {
-    border-radius: 6px;
+    display: none;    
 
-    @media(max-width: 440px) {
-        display: none;
+    @media(min-width: $screen-s) {
+        display: block;    
+        border-radius: 6px;    
+
+        &-Container {
+            height: calc(100% - 60px);
+        }
+
+        &-Info {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px;
+            text-align: left;
+            background: var(--color-background);
+        }
+
+        &-Text {
+            overflow: hidden;
+        }
+
+        &-Title {
+            overflow: hidden;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 1.3em;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        &-Channel {
+            font-size: 13px;
+            line-height: 1.2em;
+            color: var(--text-subtitle);
+        }
+
+        &-Avatar {
+            flex-basis: 32px;
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        &-Controls {
+            display: flex;
+        }
+
+        &-Icon {
+            display: inline-block;
+            box-sizing: border-box;
+            width: 32px;
+            height: 32px;
+            margin-left: 12px;
+            padding: 6px 8px 10px;
+            border-radius: 50%;
+
+            &_like {
+                margin-left: 6px;
+                background: var(--color-blue);
+            }
+
+            &_dislike {
+                background: var(--color-red);
+                transform: rotate(180deg);
+            }
+
+            &_next {
+                padding: 4px;
+                background: var(--color-background-button);
+            }
+        }
     }
 
-    @media(min-width: 1441px) {
-        width: 586px;
-        height: 390px;
-    }
-
-    @media(min-width: 1301px) and (max-width: 1440px) {
-        width: 498px;
-        height: 340px;
-    }
-
-    @media(min-width: 440px) and (max-width: 1300px) {
+    @media(min-width: $screen-m) {
         width: 380px;
         height: 274px;
     }
 
-    &-Container {
-        height: calc(100% - 60px);
+    @media(min-width: $screen-l) {
+        width: 498px;
+        height: 340px;
     }
 
-    &-Info {
-        display: flex;
-        justify-content: space-between;
-        padding: 12px;
-        text-align: left;
-        background: var(--color-background);
-    }
-
-    &-Text {
-        overflow: hidden;
-    }
-
-    &-Title {
-        overflow: hidden;
-        font-weight: 500;
-        font-size: 15px;
-        line-height: 1.3em;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-
-    &-Channel {
-        font-size: 13px;
-        line-height: 1.2em;
-        color: var(--text-subtitle);
-    }
-
-    &-Avatar {
-        flex-basis: 32px;
-        width: 32px;
-        height: 32px;
-        margin-right: 10px;
-        border-radius: 50%;
-    }
-
-    &-Controls {
-        display: flex;
-    }
-
-    &-Icon {
-        display: inline-block;
-        box-sizing: border-box;
-        width: 32px;
-        height: 32px;
-        margin-left: 12px;
-        padding: 6px 8px 10px;
-        border-radius: 50%;
-
-        &_like {
-            margin-left: 6px;
-            background: var(--color-blue);
-        }
-
-        &_dislike {
-            background: var(--color-red);
-            transform: rotate(180deg);
-        }
-
-        &_next {
-            padding: 4px;
-            background: var(--color-background-button);
-        }
-    }
+    @media(min-width: $screen-xl) {
+        width: 586px;
+        height: 390px;
+    }    
 }
